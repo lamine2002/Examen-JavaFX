@@ -1,4 +1,4 @@
-package com.example.mohamed_lamine_niang_devoir1.BD;
+package com.example.examen.BD;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -10,7 +10,7 @@ public class BD {
     private final String server= "localhost";
     private final String username = "root";
     private final String password = "root";
-    private final String bd = "devoir_javafx";
+    private final String bd = "javafxExam";
     private final String url = ""
             + "jdbc:mysql://"+server+":3306/"+bd;
     private Connection conn;
