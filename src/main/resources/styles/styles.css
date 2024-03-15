@@ -1,0 +1,10 @@
+#principalPaneSideBar{
+    -fx-background-color: #353A56;
+/*  Ajouter une ombre a droite  */
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.9), 20, 0, 0, 0);
+    -fx-border-radius: 30%;
+}
+
+#principalBody{
+    -fx-border-radius: 50 50 50 50;
+}

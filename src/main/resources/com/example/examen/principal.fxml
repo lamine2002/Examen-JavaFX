@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane fx:id="principalBody" prefHeight="719.0" prefWidth="909.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.examen.PrincipalController">
+   <children>
+      <Pane fx:id="principalPaneSideBar" prefHeight="810.0" prefWidth="234.0" stylesheets="@../../../styles/styles.css">
+         <children>
+            <Button fx:id="homeNav" layoutX="1.0" layoutY="121.0" mnemonicParsing="false" onAction="#linkToHome" prefHeight="48.0" prefWidth="234.0" text="Home" />
+            <Button fx:id="aboutNav" layoutX="1.0" layoutY="190.0" mnemonicParsing="false" onAction="#linkToAbout" prefHeight="48.0" prefWidth="234.0" text="A propos" />
+            <Button fx:id="closeNav" layoutX="1.0" layoutY="277.0" mnemonicParsing="false" onAction="#close" prefHeight="48.0" prefWidth="234.0" text="Quitter" />
+         </children></Pane>
+      <Pane fx:id="paneContainer" layoutX="235.0" prefHeight="810.0" prefWidth="678.0" />
+   </children>
+</AnchorPane>
