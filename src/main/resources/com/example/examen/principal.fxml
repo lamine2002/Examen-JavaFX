@@ -15,10 +15,10 @@
             <Button fx:id="closeNav" layoutY="477.0" mnemonicParsing="false" onAction="#close" prefHeight="48.0" prefWidth="234.0" text="Quitter" />
             <ImageView fitHeight="233.0" fitWidth="281.0" layoutX="2.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../images/logo-removebg-preview.png" />
+                  <Image url="@../../../images/logo3-removebg-preview.png" />
                </image>
             </ImageView>
          </children></Pane>
-      <Pane fx:id="paneContainer" layoutX="235.0" prefHeight="810.0" prefWidth="678.0" />
+      <Pane fx:id="paneContainer" layoutX="234.0" prefHeight="810.0" prefWidth="678.0" />
    </children>
 </AnchorPane>

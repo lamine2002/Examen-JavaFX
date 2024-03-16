@@ -1,5 +1,6 @@
 package com.example.examen;
 
+import com.example.examen.lib.Utilis;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -23,9 +24,6 @@ public class PrincipalController implements Initializable {
     }
 
     @FXML
-    private Button aboutNav;
-
-    @FXML
     private Button closeNav;
 
     @FXML
@@ -43,26 +41,10 @@ public class PrincipalController implements Initializable {
     @FXML
     void close(ActionEvent event) throws IOException {
         //System.exit(0); // ce code permet de fermer l'application de manière brutale
-        Node node = (Node) event.getSource();
-        Stage thisStage = (Stage) node.getScene().getWindow();
-        thisStage.close();
-
-        Stage stage = new Stage();
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("connexion.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
-        stage.setTitle("Hello!");
-        stage.setScene(scene);
-        stage.initStyle(StageStyle.UNDECORATED); // Cette ligne permet de retirer la barre de titre
-        stage.setResizable(false);
-        stage.sizeToScene();
-        stage.centerOnScreen();
-        stage.show();
+        Utilis.loadScene(event, "connexion.fxml", "Connexion");
     }
 
-    @FXML
-    void linkToAbout(ActionEvent event) {
 
-    }
 
     @FXML
     void linkToHome(ActionEvent event) throws IOException {
