@@ -14,18 +14,10 @@
 <junit.version>5.9.2</junit.version>  </properties>
 
   <dependencies>
-    <!-- Ikonli Core dependency -->
     <dependency>
       <groupId>org.kordamp.ikonli</groupId>
-      <artifactId>ikonli-javafx</artifactId>
-      <version>12.2.0</version> <!-- Utilisez la dernière version disponible -->
-    </dependency>
-
-    <!-- Ikonli FontAwesome pack dependency -->
-    <dependency>
-      <groupId>org.kordamp.ikonli</groupId>
-      <artifactId>ikonli-fontawesome5-pack</artifactId>
-      <version>12.2.0</version> <!-- Utilisez la dernière version disponible -->
+      <artifactId>ikonli-swing</artifactId>
+      <version>12.3.1</version>
     </dependency>
     <!-- https://mvnrepository.com/artifact/de.jensd/fontawesomefx -->
     <dependency>

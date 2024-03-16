@@ -11,6 +11,7 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.io.IOException;
 import java.net.URL;
@@ -51,6 +52,7 @@ public class PrincipalController implements Initializable {
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Hello!");
         stage.setScene(scene);
+        stage.initStyle(StageStyle.UNDECORATED); // Cette ligne permet de retirer la barre de titre
         stage.setResizable(false);
         stage.sizeToScene();
         stage.centerOnScreen();

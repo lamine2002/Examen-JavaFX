@@ -25,7 +25,7 @@
 
 #loginInput:focused {
 /* je veux qu'il soit comme  l'active de jfxtextfield*/
-    -fx-border-color: #353A56;
+    -fx-border-color: #4b5279;
     -fx-border-width: 0 0 2 0;
 }
 #passwordInput{
@@ -42,7 +42,7 @@
 }
 
 #passwordInput:focused {
-    -fx-border-color: #353A56;
+    -fx-border-color: #4b5279;
     -fx-border-width: 0 0 2 0;
 }
 

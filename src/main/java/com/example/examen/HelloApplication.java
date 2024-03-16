@@ -13,6 +13,7 @@ public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("connexion.fxml"));
+
 // Création de la scène sans spécifier la taille, pour qu'elle s'adapte au contenu FXML
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Connexion");
@@ -23,8 +24,8 @@ public class HelloApplication extends Application {
         stage.centerOnScreen(); // Centre la fenêtre sur l'écran
         stage.show();
 
-        BD bd = new BD();
-        bd.getConnection();
+//        BD bd = new BD();
+//        bd.getConnection();
 
     }
 
