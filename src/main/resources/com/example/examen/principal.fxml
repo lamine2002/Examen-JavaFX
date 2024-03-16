@@ -11,7 +11,7 @@
       <Pane fx:id="principalPaneSideBar" prefHeight="810.0" prefWidth="234.0" stylesheets="@../../../styles/styles.css">
          <children>
             <Button fx:id="homeNav" layoutY="321.0" mnemonicParsing="false" onAction="#linkToHome" prefHeight="48.0" prefWidth="234.0" text="Home" />
-            <Button fx:id="aboutNav" layoutY="390.0" mnemonicParsing="false" onAction="#linkToAbout" prefHeight="48.0" prefWidth="234.0" text="A propos" />
+            <Button fx:id="btnCategory" layoutY="390.0" mnemonicParsing="false" onAction="#linkToCategory" prefHeight="48.0" prefWidth="234.0" text="Catégorie" />
             <Button fx:id="closeNav" layoutY="477.0" mnemonicParsing="false" onAction="#close" prefHeight="48.0" prefWidth="234.0" text="Quitter" />
             <ImageView fitHeight="233.0" fitWidth="281.0" layoutX="2.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
                <image>

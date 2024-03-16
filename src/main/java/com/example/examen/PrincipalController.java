@@ -24,6 +24,9 @@ public class PrincipalController implements Initializable {
     }
 
     @FXML
+    private Button btnCategory;
+
+    @FXML
     private Button closeNav;
 
     @FXML
@@ -44,7 +47,16 @@ public class PrincipalController implements Initializable {
         Utilis.loadScene(event, "connexion.fxml", "Connexion");
     }
 
-
+    @FXML
+    void linkToCategory(ActionEvent event) {
+        try {
+            Parent fxml = FXMLLoader.load(getClass().getResource("category.fxml"));
+            paneContainer.getChildren().removeAll();
+            paneContainer.getChildren().setAll(fxml);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     @FXML
     void linkToHome(ActionEvent event) throws IOException {

@@ -9,13 +9,13 @@
     -fx-border-radius: 50 50 50 50;
 }
 
-#loginInput {
+#loginInput, #libelleInput{
 /*    je veux qu'il est seulement un border bottom comme jfxtextfield*/
     -fx-background-color: transparent;
     -fx-border-color: #353A56;
     -fx-border-width: 0 0 2 0;
     -fx-border-radius: 0;
-    -fx-prompt-text-fill: #353A56;
+    -fx-prompt-text-fill: #5d669a;
     -fx-text-fill: #353A56;
     -fx-font-size: 16px;
     -fx-font-family: "Arial";
@@ -33,7 +33,7 @@
     -fx-border-color: #353A56;
     -fx-border-width: 0 0 2 0;
     -fx-border-radius: 0;
-    -fx-prompt-text-fill: #353A56;
+    -fx-prompt-text-fill: #5d669a;
     -fx-text-fill: #353A56;
     -fx-font-size: 16px;
     -fx-font-family: "Arial";
@@ -65,5 +65,164 @@
     -fx-font-weight: bold;
     -fx-padding: 10px 20px;
     -fx-border-radius: 30px;
+}
+
+#btnLogin:hover {
+    -fx-background-color: #4b5279;
+}
+
+#btnLogin:pressed {
+    -fx-background-color: #4b5279;
+}
+
+#btnLogin .label {
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-family: "Arial";
+    -fx-font-weight: bold;
+}
+
+#btnLogin .graphic {
+    -fx-padding: 10px;
+}
+
+#btnAddCategorie {
+    -fx-background-color: #353A56;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-family: "Arial";
+    -fx-font-weight: bold;
+    -fx-padding: 10px 20px;
+    -fx-border-radius: 30px;
+}
+
+#btnAddCategorie:hover {
+    -fx-background-color: #4b5279;
+}
+
+#btnAddCategorie:pressed {
+    -fx-background-color: #4b5279;
+}
+
+#btnAddCategorie .label {
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-family: "Arial";
+    -fx-font-weight: bold;
+}
+
+#btnEditCategorie {
+    -fx-background-color: #e5a44d;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-family: "Arial";
+    -fx-font-weight: bold;
+    -fx-padding: 10px 20px;
+    -fx-border-radius: 30px;
+}
+
+#btnEditCategorie:hover {
+    -fx-background-color: #f5b85e;
+}
+
+#btnEditCategorie:pressed {
+    -fx-background-color: #f5b85e;
+}
+
+#btnEditCategorie .label {
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-family: "Arial";
+    -fx-font-weight: bold;
+}
+
+#btnDeleteCategorie {
+    -fx-background-color: #e55050;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-family: "Arial";
+    -fx-font-weight: bold;
+    -fx-padding: 10px 20px;
+    -fx-border-radius: 30px;
+}
+
+#btnDeleteCategorie:hover {
+    -fx-background-color: #f55e5e;
+}
+
+#btnDeleteCategorie:pressed {
+    -fx-background-color: #f55e5e;
+}
+
+#btnDeleteCategorie .label {
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-family: "Arial";
+    -fx-font-weight: bold;
+}
+
+#btnClearCategorie {
+    -fx-background-color: #888888;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-family: "Arial";
+    -fx-font-weight: bold;
+    -fx-padding: 10px 20px;
+    -fx-border-radius: 30px;
+}
+
+#btnClearCategorie:hover {
+    -fx-background-color: #999999;
+}
+
+#btnClearCategorie:pressed {
+    -fx-background-color: #999999;
+}
+
+#categoryTable {
+    -fx-background-color: #353A56;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-family: "Arial";
+    -fx-font-weight: bold;
+    -fx-padding: 10px 20px;
+    -fx-border-radius: 30px;
+}
+
+#categoryTable .column-header-background {
+    -fx-background-color: #353A56;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-family: "Arial";
+    -fx-font-weight: bold;
+    -fx-padding: 10px 20px;
+    -fx-border-radius: 30px;
+}
+
+#categoryTable .column-header-background .label {
+    -fx-text-fill: #353A56;
+    -fx-font-size: 16px;
+    -fx-font-family: "Arial";
+    -fx-font-weight: bold;
+}
+
+#categoryTable .column-header-background .label:hover {
+    -fx-text-fill: #4b5279;
+}
+
+#categoryTable .column-header-background .label:pressed {
+    -fx-text-fill: #4b5279;
+}
+
+#categoryTable .column-header-background .label .graphic {
+    -fx-padding: 10px;
+}
+
+#categoryTable .column-header-background .label .graphic:hover {
+    -fx-padding: 10px;
+}
+
+#categoryTable .column-header-background .label .graphic:pressed {
+    -fx-padding: 10px;
 }
 
