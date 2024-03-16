@@ -4,6 +4,12 @@ module com.example.examen {
     requires java.sql;
     requires org.kordamp.ikonli.core;
     requires org.kordamp.ikonli.javafx;
+    requires javafx.graphics;
+//    requires javafx.controls;
+//    requires org.kordamp.ikonli.core;
+//    requires org.kordamp.ikonli.javafx;
+    // add icon pack modules
+    requires org.kordamp.ikonli.fontawesome;
 
 
     opens com.example.examen to javafx.fxml;
