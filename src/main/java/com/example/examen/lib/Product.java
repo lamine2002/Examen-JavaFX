@@ -1,2 +1,4 @@
-package com.example.examen.lib;public class Product {
+package com.example.examen.lib;
+
+public class Product {
 }
