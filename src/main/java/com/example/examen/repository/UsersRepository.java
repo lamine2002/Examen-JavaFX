@@ -2,10 +2,12 @@ package com.example.examen.repository;
 
 import com.example.examen.BD.BD;
 import com.example.examen.lib.Users;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 public class UsersRepository {
     private Connection conn;
@@ -59,6 +61,26 @@ public class UsersRepository {
     }
 
     public ObservableList<Users> getAllUsers() {
-        return null;
+        ObservableList<Users> users = FXCollections.observableArrayList();
+        try {
+            String query = "SELECT * FROM utilisateurs";
+            PreparedStatement preparedStatement = conn.prepareStatement(query);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                Users user = new Users();
+                user.setId(resultSet.getInt("id"));
+                user.setNom(resultSet.getString("nom"));
+                user.setPrenom(resultSet.getString("prenom"));
+                user.setTelephone(resultSet.getString("telephone"));
+                user.setEmail(resultSet.getString("email"));
+                user.setLogin(resultSet.getString("login"));
+                user.setPassword(resultSet.getString("password"));
+                users.add(user);
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return users;
     }
 }
