@@ -24,7 +24,7 @@
         </TableView>
         <Button fx:id="btnDeleteProduct" layoutX="268.0" layoutY="700.0" mnemonicParsing="false" onAction="#deleteProduct" prefHeight="40.0" prefWidth="131.0" text="Supprimer" />
       <TextField fx:id="quantiteInput" layoutX="352.0" layoutY="63.0" prefHeight="42.0" prefWidth="256.0" promptText="Quantite" />
-      <ComboBox fx:id="categoryCombo" layoutX="352.0" layoutY="147.0" prefHeight="25.0" prefWidth="256.0" />
+      <ComboBox fx:id="categoryCombo" layoutX="352.0" layoutY="147.0" prefHeight="25.0" prefWidth="256.0" promptText="Choisir Categorie" />
     </children>
 
 </AnchorPane>

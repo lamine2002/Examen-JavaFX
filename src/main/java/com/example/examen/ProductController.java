@@ -1,11 +1,20 @@
 package com.example.examen;
 
+import com.example.examen.lib.Category;
+import com.example.examen.repository.CategoryRepository;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 
-public class ProductController {
+import java.net.URL;
+import java.util.List;
+import java.util.ResourceBundle;
+
+public class ProductController implements Initializable {
     @FXML
     private Button btnAddProduct;
 
@@ -19,7 +28,7 @@ public class ProductController {
     private Button btnEditProduct;
 
     @FXML
-    private ComboBox<?> categoryCombo;
+    private ComboBox<String> categoryCombo;
 
     @FXML
     private TableColumn<?, ?> colId;
@@ -70,4 +79,20 @@ public class ProductController {
 
     }
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        // implementer le combo avec les libelles categories
+        CategoryRepository categoryRepository = new CategoryRepository();
+        // recuperer les libelles des categories dans une liste
+        ObservableList<String> libelles = FXCollections.observableArrayList();
+        List<Category> categories = categoryRepository.getAll();
+        for (Category category : categories) {
+            libelles.add(category.getLibelle());
+        }
+        // ajouter les libelles dans le combo
+        categoryCombo.setItems(libelles);
+
+
+
+    }
 }
