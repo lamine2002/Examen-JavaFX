@@ -84,4 +84,20 @@ public class CategoryRepository {
         return id;
     }
 
+    public String getLibelleById(int id) {
+        String libelle = "";
+        try {
+            String query = "SELECT libelle FROM categories WHERE id = ?";
+            PreparedStatement preparedStatement = conn.prepareStatement(query);
+            preparedStatement.setInt(1, id);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                libelle = resultSet.getString("libelle");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return libelle;
+    }
+
 }

@@ -5,6 +5,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -28,4 +30,35 @@ public class Utilis {
         stage.centerOnScreen();
         stage.show();
     }
+
+    public static void alert(String message) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Information Dialog");
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
+    }
+
+    public static void alertError(String message) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Error Dialog");
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
+    }
+
+    public static boolean alertConfirmation(String message) {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Confirmation");
+        alert.setHeaderText("Suppression d'une catégorie");
+        alert.setContentText("Voulez-vous vraiment supprimer cette catégorie ?");
+        ButtonType buttonTypeYes = new ButtonType("Oui");
+        ButtonType buttonTypeNo = new ButtonType("Non");
+        alert.getButtonTypes().setAll(buttonTypeYes, buttonTypeNo);
+        alert.showAndWait();
+
+        return alert.getResult() == buttonTypeYes;
+    }
+
+
 }

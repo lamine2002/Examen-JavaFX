@@ -262,3 +262,32 @@ ComboBox .content .label:hover {
 ComboBox .content .label:pressed {
     -fx-text-fill: #4b5279;
 }
+
+#homeNav{
+    -fx-background-color: #353A56;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-family: "Arial";
+    -fx-font-weight: bold;
+    -fx-padding: 10px 20px;
+    -fx-border-radius: 30px;
+}
+
+#homeNav:hover {
+    -fx-background-color: #4b5279;
+}
+
+#homeNav:pressed {
+    -fx-background-color: #4b5279;
+}
+
+#homeNav .label {
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-family: "Arial";
+    -fx-font-weight: bold;
+}
+
+#homeNav .graphic {
+    -fx-padding: 10px;
+}

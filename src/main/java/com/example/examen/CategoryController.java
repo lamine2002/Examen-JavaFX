@@ -1,6 +1,7 @@
 package com.example.examen;
 
 import com.example.examen.lib.Category;
+import com.example.examen.lib.Utilis;
 import com.example.examen.repository.CategoryRepository;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -59,11 +60,7 @@ public class CategoryController implements Initializable {
     void addCategorie(ActionEvent event) {
         if (libelleInput.getText().isEmpty()) {
             // afficher un message d'erreur
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Erreur");
-            alert.setHeaderText("Erreur de saisie");
-            alert.setContentText("Le libellé ne doit pas être vide");
-            alert.showAndWait();
+            Utilis.alertError("Le libellé est obligatoire");
 
         }else {
             Category category = new Category(libelleInput.getText());
@@ -92,15 +89,8 @@ public class CategoryController implements Initializable {
     @FXML
     void deleteCategorie(ActionEvent event) {
         // alerte de confirmation
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Confirmation");
-        alert.setHeaderText("Suppression d'une catégorie");
-        alert.setContentText("Voulez-vous vraiment supprimer cette catégorie ?");
-        ButtonType buttonTypeYes = new ButtonType("Oui");
-        ButtonType buttonTypeNo = new ButtonType("Non");
-        alert.getButtonTypes().setAll(buttonTypeYes, buttonTypeNo);
-        alert.showAndWait();
-        if (alert.getResult() == buttonTypeYes) {
+        boolean result = Utilis.alertConfirmation("Voulez-vous vraiment supprimer cette catégorie ?");
+        if (result) {
             Category category = categoryTable.getSelectionModel().getSelectedItem();
             categoryRepository.deleteCategory(category.getId());
             displayCategories();

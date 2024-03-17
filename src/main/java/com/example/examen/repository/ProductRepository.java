@@ -11,18 +11,21 @@ import java.sql.ResultSet;
 
 public class ProductRepository {
     private Connection conn;
+    private CategoryRepository categoryRepository;
     public ProductRepository() {
         this.conn = new BD().getConnection();
+        categoryRepository = new CategoryRepository();
     }
 
     public void addProduct(Product product) {
+        int idCategorie = categoryRepository.getIdByLibelle(product.getCategorie());
         try {
-            String query = "INSERT INTO products (libelle, quantite, prix_unitaire, categorie) VALUES (?, ?, ?, ?)";
+            String query = "INSERT INTO produits (libelle, quantite, prixUnitaire, idcategorie) VALUES (?, ?, ?, ?)";
             PreparedStatement preparedStatement = conn.prepareStatement(query);
             preparedStatement.setString(1, product.getLibelle());
             preparedStatement.setInt(2, product.getQuantite());
             preparedStatement.setDouble(3, product.getPrixUnitaire());
-            preparedStatement.setString(4, product.getCategorie());
+            preparedStatement.setInt(4, idCategorie);
             preparedStatement.executeUpdate();
         } catch (Exception e) {
             e.printStackTrace();
@@ -30,13 +33,14 @@ public class ProductRepository {
     }
 
     public void updateProduct(Product product) {
+        int idCategorie = categoryRepository.getIdByLibelle(product.getCategorie());
         try {
-            String query = "UPDATE products SET libelle = ?, quantite = ?, prix_unitaire = ?, categorie = ? WHERE id = ?";
+            String query = "UPDATE produits SET libelle = ?, quantite = ?, prixUnitaire = ?, idcategorie = ? WHERE id = ?";
             PreparedStatement preparedStatement = conn.prepareStatement(query);
             preparedStatement.setString(1, product.getLibelle());
             preparedStatement.setInt(2, product.getQuantite());
             preparedStatement.setDouble(3, product.getPrixUnitaire());
-            preparedStatement.setString(4, product.getCategorie());
+            preparedStatement.setInt(4, idCategorie);
             preparedStatement.setInt(5, product.getId());
             preparedStatement.executeUpdate();
         } catch (Exception e) {
@@ -46,7 +50,7 @@ public class ProductRepository {
 
     public void deleteProduct(int id) {
         try {
-            String query = "DELETE FROM products WHERE id = ?";
+            String query = "DELETE FROM produits WHERE id = ?";
             PreparedStatement preparedStatement = conn.prepareStatement(query);
             preparedStatement.setInt(1, id);
             preparedStatement.executeUpdate();
@@ -56,10 +60,10 @@ public class ProductRepository {
     }
 
     public ObservableList<Product> getAll() {
-        ObservableList<Product> products = null;
+        ObservableList<Product> produits = null;
 try {
-            products = FXCollections.observableArrayList();
-            String query = "SELECT * FROM products";
+            produits = FXCollections.observableArrayList();
+            String query = "SELECT * FROM produits";
             PreparedStatement preparedStatement = conn.prepareStatement(query);
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
@@ -67,13 +71,13 @@ try {
                 product.setId(resultSet.getInt("id"));
                 product.setLibelle(resultSet.getString("libelle"));
                 product.setQuantite(resultSet.getInt("quantite"));
-                product.setPrixUnitaire(resultSet.getDouble("prix_unitaire"));
-                product.setCategorie(resultSet.getString("categorie"));
-                products.add(product);
+                product.setPrixUnitaire(resultSet.getDouble("prixUnitaire"));
+                product.setCategorie(categoryRepository.getLibelleById(resultSet.getInt("idcategorie")));
+                produits.add(product);
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return products;
+        return produits;
     }
 }
