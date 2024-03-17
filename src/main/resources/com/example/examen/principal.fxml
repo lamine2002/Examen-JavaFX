@@ -10,14 +10,16 @@
    <children>
       <Pane fx:id="principalPaneSideBar" prefHeight="810.0" prefWidth="234.0" stylesheets="@../../../styles/styles.css">
          <children>
-            <Button fx:id="homeNav" layoutY="321.0" mnemonicParsing="false" onAction="#linkToHome" prefHeight="48.0" prefWidth="234.0" text="Home" />
-            <Button fx:id="btnCategory" layoutY="390.0" mnemonicParsing="false" onAction="#linkToCategory" prefHeight="48.0" prefWidth="234.0" text="Catégorie" />
-            <Button fx:id="closeNav" layoutY="477.0" mnemonicParsing="false" onAction="#close" prefHeight="48.0" prefWidth="234.0" text="Quitter" />
+            <Button fx:id="homeNav" layoutY="311.0" mnemonicParsing="false" onAction="#linkToHome" prefHeight="48.0" prefWidth="234.0" text="Home" />
+            <Button fx:id="categoryNav" layoutY="390.0" mnemonicParsing="false" onAction="#linkToCategory" prefHeight="48.0" prefWidth="234.0" text="Catégorie" />
+            <Button fx:id="closeNav" layoutY="647.0" mnemonicParsing="false" onAction="#close" prefHeight="48.0" prefWidth="234.0" text="Quitter" />
             <ImageView fitHeight="233.0" fitWidth="281.0" layoutX="2.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../images/logo3-removebg-preview.png" />
                </image>
             </ImageView>
+            <Button fx:id="produitNav" layoutY="465.0" mnemonicParsing="false" onAction="#linkToProduct" prefHeight="48.0" prefWidth="234.0" text="Produit" />
+            <Button fx:id="UserNav" layoutY="545.0" mnemonicParsing="false" onAction="#linkToUser" prefHeight="48.0" prefWidth="234.0" text="Utitlisateur" />
          </children></Pane>
       <Pane fx:id="paneContainer" layoutX="234.0" prefHeight="810.0" prefWidth="678.0" />
    </children>

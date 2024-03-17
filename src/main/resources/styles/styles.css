@@ -9,7 +9,7 @@
     -fx-border-radius: 50 50 50 50;
 }
 
-#loginInput, #libelleInput{
+#loginInput, #libelleInput, TextField {
 /*    je veux qu'il est seulement un border bottom comme jfxtextfield*/
     -fx-background-color: transparent;
     -fx-border-color: #353A56;
@@ -23,7 +23,7 @@
     -fx-padding: 10px;
 }
 
-#loginInput:focused {
+#loginInput:focused, #libelleInput:focused, TextField:focused{
 /* je veux qu'il soit comme  l'active de jfxtextfield*/
     -fx-border-color: #4b5279;
     -fx-border-width: 0 0 2 0;
@@ -46,11 +46,11 @@
     -fx-border-width: 0 0 2 0;
 }
 
-#loginInput .content {
+TextField .content  {
     -fx-padding: 10px;
 }
 
-#loginInput .content .label {
+TextField .content .label {
     -fx-text-fill: #353A56;
     -fx-font-size: 16px;
     -fx-font-family: "Arial";
@@ -86,7 +86,7 @@
     -fx-padding: 10px;
 }
 
-#btnAddCategorie {
+#btnAddCategorie, #btnAddProduct {
     -fx-background-color: #353A56;
     -fx-text-fill: white;
     -fx-font-size: 16px;
@@ -96,11 +96,11 @@
     -fx-border-radius: 30px;
 }
 
-#btnAddCategorie:hover {
+#btnAddCategorie:hover, #btnAddProduct:hover {
     -fx-background-color: #4b5279;
 }
 
-#btnAddCategorie:pressed {
+#btnAddCategorie:pressed, #btnAddProduct:pressed {
     -fx-background-color: #4b5279;
 }
 
@@ -111,7 +111,7 @@
     -fx-font-weight: bold;
 }
 
-#btnEditCategorie {
+#btnEditCategorie, #btnEditProduct {
     -fx-background-color: #e5a44d;
     -fx-text-fill: white;
     -fx-font-size: 16px;
@@ -121,11 +121,11 @@
     -fx-border-radius: 30px;
 }
 
-#btnEditCategorie:hover {
+#btnEditCategorie:hover, #btnEditProduct:hover {
     -fx-background-color: #f5b85e;
 }
 
-#btnEditCategorie:pressed {
+#btnEditCategorie:pressed, #btnEditProduct:pressed {
     -fx-background-color: #f5b85e;
 }
 
@@ -136,7 +136,7 @@
     -fx-font-weight: bold;
 }
 
-#btnDeleteCategorie {
+#btnDeleteCategorie, #btnDeleteProduct {
     -fx-background-color: #e55050;
     -fx-text-fill: white;
     -fx-font-size: 16px;
@@ -146,11 +146,11 @@
     -fx-border-radius: 30px;
 }
 
-#btnDeleteCategorie:hover {
+#btnDeleteCategorie:hover, #btnDeleteProduct:hover {
     -fx-background-color: #f55e5e;
 }
 
-#btnDeleteCategorie:pressed {
+#btnDeleteCategorie:pressed, #btnDeleteProduct:pressed {
     -fx-background-color: #f55e5e;
 }
 
@@ -161,7 +161,7 @@
     -fx-font-weight: bold;
 }
 
-#btnClearCategorie {
+#btnClearCategorie, #btnClearProduct {
     -fx-background-color: #888888;
     -fx-text-fill: white;
     -fx-font-size: 16px;
@@ -171,15 +171,15 @@
     -fx-border-radius: 30px;
 }
 
-#btnClearCategorie:hover {
+#btnClearCategorie:hover, #btnClearProduct:hover {
     -fx-background-color: #999999;
 }
 
-#btnClearCategorie:pressed {
+#btnClearCategorie:pressed, #btnClearProduct:pressed {
     -fx-background-color: #999999;
 }
 
-#categoryTable {
+TableView {
     -fx-background-color: #353A56;
     -fx-text-fill: white;
     -fx-font-size: 16px;
@@ -189,7 +189,7 @@
     -fx-border-radius: 30px;
 }
 
-#categoryTable .column-header-background {
+TableView .column-header-background {
     -fx-background-color: #353A56;
     -fx-text-fill: white;
     -fx-font-size: 16px;
@@ -199,30 +199,66 @@
     -fx-border-radius: 30px;
 }
 
-#categoryTable .column-header-background .label {
+TableView .column-header-background .label {
     -fx-text-fill: #353A56;
     -fx-font-size: 16px;
     -fx-font-family: "Arial";
     -fx-font-weight: bold;
 }
 
-#categoryTable .column-header-background .label:hover {
+TableView .column-header-background .label:hover {
     -fx-text-fill: #4b5279;
 }
 
-#categoryTable .column-header-background .label:pressed {
+TableView .column-header-background .label:pressed {
     -fx-text-fill: #4b5279;
 }
 
-#categoryTable .column-header-background .label .graphic {
+TableView .column-header-background .label .graphic {
     -fx-padding: 10px;
 }
 
-#categoryTable .column-header-background .label .graphic:hover {
+TableView .column-header-background .label .graphic:hover {
     -fx-padding: 10px;
 }
 
-#categoryTable .column-header-background .label .graphic:pressed {
+TableView .column-header-background .label .graphic:pressed {
     -fx-padding: 10px;
 }
 
+ComboBox {
+    -fx-background-color: transparent;
+    -fx-border-color: #353A56;
+    -fx-border-width: 0 0 2 0;
+    -fx-border-radius: 0;
+    -fx-prompt-text-fill: #5d669a;
+    -fx-text-fill: #353A56;
+    -fx-font-size: 16px;
+    -fx-font-family: "Arial";
+    -fx-font-weight: bold;
+    -fx-padding: 10px;
+}
+
+ComboBox:focused {
+    -fx-border-color: #4b5279;
+    -fx-border-width: 0 0 2 0;
+}
+
+ComboBox .content  {
+    -fx-padding: 10px;
+}
+
+ComboBox .content .label {
+    -fx-text-fill: #353A56;
+    -fx-font-size: 16px;
+    -fx-font-family: "Arial";
+    -fx-font-weight: bold;
+}
+
+ComboBox .content .label:hover {
+    -fx-text-fill: #4b5279;
+}
+
+ComboBox .content .label:pressed {
+    -fx-text-fill: #4b5279;
+}

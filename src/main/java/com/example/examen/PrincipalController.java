@@ -19,12 +19,13 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class PrincipalController implements Initializable {
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-    }
+
 
     @FXML
-    private Button btnCategory;
+    private Button UserNav;
+
+    @FXML
+    private Button categoryNav;
 
     @FXML
     private Button closeNav;
@@ -33,13 +34,20 @@ public class PrincipalController implements Initializable {
     private Button homeNav;
 
     @FXML
+    private Pane paneContainer;
+
+    @FXML
     private AnchorPane principalBody;
 
     @FXML
     private Pane principalPaneSideBar;
 
     @FXML
-    private Pane paneContainer;
+    private Button produitNav;
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+    }
 
     @FXML
     void close(ActionEvent event) throws IOException {
@@ -63,5 +71,21 @@ public class PrincipalController implements Initializable {
         Parent fxml = FXMLLoader.load(getClass().getResource("home.fxml"));
         paneContainer.getChildren().removeAll();
         paneContainer.getChildren().setAll(fxml);
+    }
+
+    @FXML
+    void linkToProduct(ActionEvent event) {
+        try {
+            Parent fxml = FXMLLoader.load(getClass().getResource("product.fxml"));
+            paneContainer.getChildren().removeAll();
+            paneContainer.getChildren().setAll(fxml);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    void linkToUser(ActionEvent event) {
+
     }
 }
