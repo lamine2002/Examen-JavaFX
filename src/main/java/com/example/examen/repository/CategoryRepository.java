@@ -68,4 +68,20 @@ public class CategoryRepository {
         }
     }
 
+    public int getIdByLibelle(String libelle) {
+        int id = 0;
+        try {
+            String query = "SELECT id FROM categories WHERE libelle = ?";
+            PreparedStatement preparedStatement = conn.prepareStatement(query);
+            preparedStatement.setString(1, libelle);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                id = resultSet.getInt("id");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return id;
+    }
+
 }
