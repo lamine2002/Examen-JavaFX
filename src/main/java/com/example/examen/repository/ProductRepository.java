@@ -80,4 +80,24 @@ try {
         }
         return produits;
     }
+
+    // nombre de produit par catégorie et le mettre dans un pie chart
+    public ObservableList<Product> getNombreProduitParCategorie() {
+        ObservableList<Product> produits = null;
+        try {
+            produits = FXCollections.observableArrayList();
+            String query = "SELECT c.libelle, COUNT(p.id) as nombreProduit FROM produits p, categories c WHERE p.idcategorie = c.id GROUP BY c.libelle";
+            PreparedStatement preparedStatement = conn.prepareStatement(query);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                Product product = new Product();
+                product.setCategorie(resultSet.getString("libelle"));
+                product.setQuantite(resultSet.getInt("nombreProduit"));
+                produits.add(product);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return produits;
+    }
 }

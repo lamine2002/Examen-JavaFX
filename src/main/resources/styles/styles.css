@@ -291,3 +291,10 @@ ComboBox .content .label:pressed {
 #homeNav .graphic {
     -fx-padding: 10px;
 }
+
+#circleChartLabel, #diagramChartLabel {
+    -fx-text-fill: #353A56;
+    -fx-font-size: 20px;
+    -fx-font-family: "Arial";
+    -fx-font-weight: bold;
+}

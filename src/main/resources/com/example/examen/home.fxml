@@ -1,17 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.chart.StackedBarChart?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.examen.HomeController">
+<AnchorPane prefHeight="810.0" prefWidth="841.0" stylesheets="@../../../styles/styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.examen.HomeController">
    <children>
-      <TableView layoutX="200.0" layoutY="94.0" prefHeight="200.0" prefWidth="200.0">
-        <columns>
-          <TableColumn prefWidth="75.0" text="C1" />
-          <TableColumn prefWidth="75.0" text="C2" />
-        </columns>
-      </TableView>
+      <PieChart fx:id="circleChart" layoutX="210.0" layoutY="63.0" prefHeight="331.0" prefWidth="422.0" />
+      <Label fx:id="circleChartLabel" layoutX="127.0" layoutY="8.0" prefHeight="45.0" prefWidth="587.0" text="Diagramme du nombre de présence de produit par catégorie" />
+      <StackedBarChart fx:id="diagramChart" layoutX="41.0" layoutY="464.0" prefHeight="331.0" prefWidth="759.0">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" />
+        </yAxis>
+      </StackedBarChart>
+      <Label fx:id="diagramChartLabel" layoutX="205.0" layoutY="430.0" text="le nombre de produit ajouté par mois en 2024" />
    </children>
 </AnchorPane>
