@@ -9,13 +9,13 @@
 
 <AnchorPane prefHeight="810.0" prefWidth="841.0" stylesheets="@../../../styles/styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.examen.UsersController">
    <children>
-      <TextField fx:id="nomInput" layoutX="193.0" layoutY="32.0" promptText="Nom" />
-      <TextField fx:id="prenomInput" layoutX="457.0" layoutY="32.0" promptText="Prenom" />
-      <TextField fx:id="emailInput" layoutX="280.0" layoutY="224.0" prefHeight="42.0" prefWidth="305.0" promptText="Email" />
-      <TextField fx:id="telephoneInput" layoutX="592.0" layoutY="138.0" promptText="Telephone" />
-      <TextField fx:id="loginInput" layoutX="66.0" layoutY="138.0" promptText="Login" />
-      <TextField fx:id="mdpInput" layoutX="332.0" layoutY="138.0" promptText="Mot de Passe" />
-      <TableView fx:id="userTable" layoutX="7.0" layoutY="512.0" onMouseClicked="#editUser" prefHeight="222.0" prefWidth="828.0">
+      <TextField fx:id="nomInput" layoutX="198.0" layoutY="48.0" promptText="Nom" />
+      <TextField fx:id="prenomInput" layoutX="462.0" layoutY="48.0" promptText="Prenom" />
+      <TextField fx:id="emailInput" layoutX="285.0" layoutY="240.0" prefHeight="42.0" prefWidth="305.0" promptText="Email" />
+      <TextField fx:id="telephoneInput" layoutX="597.0" layoutY="154.0" promptText="Telephone" />
+      <TextField fx:id="loginInput" layoutX="71.0" layoutY="154.0" promptText="Login" />
+      <TextField fx:id="mdpInput" layoutX="337.0" layoutY="154.0" promptText="Mot de Passe" />
+      <TableView fx:id="userTable" layoutX="7.0" layoutY="478.0" onMouseClicked="#editUser" prefHeight="222.0" prefWidth="828.0">
         <columns>
           <TableColumn fx:id="colId" prefWidth="59.333309173583984" text="#" />
           <TableColumn fx:id="colNom" prefWidth="104.00003814697266" text="Nom" />
@@ -26,9 +26,9 @@
             <TableColumn fx:id="colmdp" prefWidth="120.6666259765625" text="Mot de passe" />
         </columns>
       </TableView>
-      <Button fx:id="btnAddUser" layoutX="225.0" layoutY="313.0" mnemonicParsing="false" onAction="#addUser" prefHeight="12.0" prefWidth="110.0" text="Ajouter" />
-      <Button fx:id="btnEditUser" layoutX="361.0" layoutY="313.0" mnemonicParsing="false" onAction="#updateUser" prefHeight="12.0" prefWidth="110.0" text="Modifier" />
-      <Button fx:id="btnClearUser" layoutX="507.0" layoutY="313.0" mnemonicParsing="false" onAction="#clear" prefHeight="12.0" prefWidth="110.0" text="Clear" />
-      <Button fx:id="btnDeleteUser" layoutX="366.0" layoutY="756.0" mnemonicParsing="false" onAction="#deleteUser" prefHeight="40.0" prefWidth="133.0" text="Supprimer" />
+      <Button fx:id="btnAddUser" layoutX="230.0" layoutY="329.0" mnemonicParsing="false" onAction="#addUser" prefHeight="12.0" prefWidth="110.0" text="Ajouter" />
+      <Button fx:id="btnEditUser" layoutX="366.0" layoutY="329.0" mnemonicParsing="false" onAction="#updateUser" prefHeight="12.0" prefWidth="110.0" text="Modifier" />
+      <Button fx:id="btnClearUser" layoutX="512.0" layoutY="329.0" mnemonicParsing="false" onAction="#clear" prefHeight="12.0" prefWidth="110.0" text="Clear" />
+      <Button fx:id="btnDeleteUser" layoutX="366.0" layoutY="722.0" mnemonicParsing="false" onAction="#deleteUser" prefHeight="40.0" prefWidth="133.0" text="Supprimer" />
    </children>
 </AnchorPane>

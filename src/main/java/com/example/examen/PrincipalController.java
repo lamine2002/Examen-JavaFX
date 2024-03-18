@@ -47,6 +47,13 @@ public class PrincipalController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        try {
+            Parent fxml = FXMLLoader.load(getClass().getResource("home.fxml"));
+            paneContainer.getChildren().removeAll();
+            paneContainer.getChildren().setAll(fxml);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML

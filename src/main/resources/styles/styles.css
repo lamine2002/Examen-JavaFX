@@ -298,3 +298,61 @@ ComboBox .content .label:pressed {
     -fx-font-family: "Arial";
     -fx-font-weight: bold;
 }
+
+#categoryNav, #produitNav, #UserNav {
+    -fx-background-color: #353A56;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-family: "Arial";
+    -fx-font-weight: bold;
+    -fx-padding: 10px 20px;
+    -fx-border-radius: 30px;
+}
+
+#categoryNav:hover, #produitNav:hover, #UserNav:hover {
+    -fx-background-color: #4b5279;
+}
+
+#categoryNav:pressed, #produitNav:pressed, #UserNav:pressed {
+    -fx-background-color: #4b5279;
+}
+
+#categoryNav .label, #produitNav .label, #UserNav .label {
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-family: "Arial";
+    -fx-font-weight: bold;
+}
+
+#categoryNav .graphic, #produitNav .graphic, #UserNav .graphic {
+    -fx-padding: 10px;
+}
+
+#closeNav {
+    -fx-background-color: #353A56;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-family: "Arial";
+    -fx-font-weight: bold;
+    -fx-padding: 10px 20px;
+    -fx-border-radius: 30px;
+}
+
+#closeNav:hover {
+    -fx-background-color: #4b5279;
+}
+
+#closeNav:pressed {
+    -fx-background-color: #4b5279;
+}
+
+#closeNav .label {
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-family: "Arial";
+    -fx-font-weight: bold;
+}
+
+#closeNav .graphic {
+    -fx-padding: 10px;
+}
