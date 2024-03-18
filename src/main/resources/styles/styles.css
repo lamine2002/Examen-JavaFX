@@ -86,7 +86,7 @@ TextField .content .label {
     -fx-padding: 10px;
 }
 
-#btnAddCategorie, #btnAddProduct {
+#btnAddCategorie, #btnAddProduct, #btnAddUser {
     -fx-background-color: #353A56;
     -fx-text-fill: white;
     -fx-font-size: 16px;
@@ -96,11 +96,11 @@ TextField .content .label {
     -fx-border-radius: 30px;
 }
 
-#btnAddCategorie:hover, #btnAddProduct:hover {
+#btnAddCategorie:hover, #btnAddProduct:hover, #btnAddUser:hover {
     -fx-background-color: #4b5279;
 }
 
-#btnAddCategorie:pressed, #btnAddProduct:pressed {
+#btnAddCategorie:pressed, #btnAddProduct:pressed, #btnAddUser:pressed {
     -fx-background-color: #4b5279;
 }
 
@@ -111,7 +111,7 @@ TextField .content .label {
     -fx-font-weight: bold;
 }
 
-#btnEditCategorie, #btnEditProduct {
+#btnEditCategorie, #btnEditProduct, #btnEditUser {
     -fx-background-color: #e5a44d;
     -fx-text-fill: white;
     -fx-font-size: 16px;
@@ -121,11 +121,11 @@ TextField .content .label {
     -fx-border-radius: 30px;
 }
 
-#btnEditCategorie:hover, #btnEditProduct:hover {
+#btnEditCategorie:hover, #btnEditProduct:hover, #btnEditUser:hover {
     -fx-background-color: #f5b85e;
 }
 
-#btnEditCategorie:pressed, #btnEditProduct:pressed {
+#btnEditCategorie:pressed, #btnEditProduct:pressed, #btnEditUser:pressed {
     -fx-background-color: #f5b85e;
 }
 
@@ -136,7 +136,7 @@ TextField .content .label {
     -fx-font-weight: bold;
 }
 
-#btnDeleteCategorie, #btnDeleteProduct {
+#btnDeleteCategorie, #btnDeleteProduct, #btnDeleteUser {
     -fx-background-color: #e55050;
     -fx-text-fill: white;
     -fx-font-size: 16px;
@@ -146,11 +146,11 @@ TextField .content .label {
     -fx-border-radius: 30px;
 }
 
-#btnDeleteCategorie:hover, #btnDeleteProduct:hover {
+#btnDeleteCategorie:hover, #btnDeleteProduct:hover, #btnDeleteUser:hover {
     -fx-background-color: #f55e5e;
 }
 
-#btnDeleteCategorie:pressed, #btnDeleteProduct:pressed {
+#btnDeleteCategorie:pressed, #btnDeleteProduct:pressed, #btnDeleteUser:pressed {
     -fx-background-color: #f55e5e;
 }
 
@@ -161,7 +161,7 @@ TextField .content .label {
     -fx-font-weight: bold;
 }
 
-#btnClearCategorie, #btnClearProduct {
+#btnClearCategorie, #btnClearProduct, #btnClearUser {
     -fx-background-color: #888888;
     -fx-text-fill: white;
     -fx-font-size: 16px;
@@ -171,11 +171,11 @@ TextField .content .label {
     -fx-border-radius: 30px;
 }
 
-#btnClearCategorie:hover, #btnClearProduct:hover {
+#btnClearCategorie:hover, #btnClearProduct:hover, #btnClearUser:hover {
     -fx-background-color: #999999;
 }
 
-#btnClearCategorie:pressed, #btnClearProduct:pressed {
+#btnClearCategorie:pressed, #btnClearProduct:pressed, #btnClearUser:pressed {
     -fx-background-color: #999999;
 }
 

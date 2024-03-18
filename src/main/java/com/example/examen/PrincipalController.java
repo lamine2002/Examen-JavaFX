@@ -86,6 +86,12 @@ public class PrincipalController implements Initializable {
 
     @FXML
     void linkToUser(ActionEvent event) {
-
+        try {
+            Parent fxml = FXMLLoader.load(getClass().getResource("users.fxml"));
+            paneContainer.getChildren().removeAll();
+            paneContainer.getChildren().setAll(fxml);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

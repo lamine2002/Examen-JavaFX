@@ -6,14 +6,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 
-<AnchorPane fx:id="principalBody" prefHeight="719.0" prefWidth="909.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.examen.PrincipalController">
+<AnchorPane fx:id="principalBody" prefHeight="810.0" prefWidth="1105.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.examen.PrincipalController">
    <children>
-      <Pane fx:id="principalPaneSideBar" prefHeight="810.0" prefWidth="234.0" stylesheets="@../../../styles/styles.css">
+      <Pane fx:id="principalPaneSideBar" prefHeight="810.0" prefWidth="265.0" stylesheets="@../../../styles/styles.css">
          <children>
             <Button fx:id="homeNav" layoutY="314.0" mnemonicParsing="false" onAction="#linkToHome" prefHeight="67.0" prefWidth="234.0" text="Home" />
             <Button fx:id="categoryNav" layoutX="2.0" layoutY="381.0" mnemonicParsing="false" onAction="#linkToCategory" prefHeight="61.0" prefWidth="234.0" text="Catégorie" />
             <Button fx:id="closeNav" layoutY="647.0" mnemonicParsing="false" onAction="#close" prefHeight="48.0" prefWidth="234.0" text="Quitter" />
-            <ImageView fitHeight="233.0" fitWidth="281.0" layoutX="2.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="263.0" fitWidth="287.0" layoutX="3.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../images/logo3-removebg-preview.png" />
                </image>
@@ -21,6 +21,6 @@
             <Button fx:id="produitNav" layoutX="2.0" layoutY="442.0" mnemonicParsing="false" onAction="#linkToProduct" prefHeight="61.0" prefWidth="234.0" text="Produit" />
             <Button fx:id="UserNav" layoutX="2.0" layoutY="503.0" mnemonicParsing="false" onAction="#linkToUser" prefHeight="61.0" prefWidth="234.0" text="Utitlisateur" />
          </children></Pane>
-      <Pane fx:id="paneContainer" layoutX="234.0" prefHeight="810.0" prefWidth="678.0" />
+      <Pane fx:id="paneContainer" layoutX="265.0" prefHeight="810.0" prefWidth="841.0" />
    </children>
 </AnchorPane>
