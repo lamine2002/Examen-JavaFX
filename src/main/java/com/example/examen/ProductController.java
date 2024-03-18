@@ -5,15 +5,21 @@ import com.example.examen.lib.Product;
 import com.example.examen.lib.Utilis;
 import com.example.examen.repository.CategoryRepository;
 import com.example.examen.repository.ProductRepository;
+import com.itextpdf.text.*;
+import com.itextpdf.text.html.WebColors;
+import com.itextpdf.text.pdf.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -23,6 +29,8 @@ public class ProductController implements Initializable {
     private CategoryRepository categoryRepository;
     @FXML
     private Button btnAddProduct;
+    @FXML
+    private Button btnPDFProduct;
 
     @FXML
     private Button btnClearProduct;
@@ -161,5 +169,81 @@ public class ProductController implements Initializable {
         colQuantite.setCellValueFactory(new PropertyValueFactory<>("quantite"));
         colCategorie.setCellValueFactory(new PropertyValueFactory<>("categorie"));
         productTable.setItems(products);
+    }
+
+    @FXML
+    void PDFProduct(ActionEvent event) {
+        Document document = new Document();
+        BaseColor themeColor = WebColors.getRGBColor("#353A56"); // Couleur du thème
+        try {
+            PdfWriter writer = PdfWriter.getInstance(document, new FileOutputStream("src/main/resources/files/Products.pdf"));
+            document.open();
+
+            // Ajouter un titre
+            Font titleFont = new Font(Font.FontFamily.TIMES_ROMAN, 18, Font.BOLD);
+            titleFont.setColor(themeColor); // Appliquer la couleur du thème au titre
+            Paragraph title = new Paragraph("Liste des produits", titleFont);
+            title.setAlignment(Element.ALIGN_CENTER);
+            document.add(title);
+
+            // Ajouter un espace
+            document.add(new Paragraph(" "));
+
+            // Créer un tableau
+            PdfPTable table = new PdfPTable(5); // 5 colonnes
+            table.setWidthPercentage(100); // Largeur 100%
+            table.setSpacingBefore(10f); // Espace avant le tableau
+            table.setSpacingAfter(10f); // Espace après le tableau
+
+            // Définir les en-têtes de colonne avec la couleur du thème
+            Font headerFont = new Font(Font.FontFamily.HELVETICA, 12, Font.BOLD, BaseColor.WHITE); // Texte blanc pour contraste
+            String[] columnHeaders = new String[]{"ID", "Libelle", "Prix", "Quantite", "Categorie"};
+            for (String columnHeader : columnHeaders) {
+                PdfPCell header = new PdfPCell();
+                header.setBackgroundColor(themeColor); // Fond avec la couleur du thème
+                header.setBorderWidth(2);
+                header.setPhrase(new Phrase(columnHeader, headerFont));
+                table.addCell(header);
+            }
+
+            // Ajouter les données du produit
+            List<Product> products = productRepository.getAll();
+            for (Product product : products) {
+                table.addCell(String.valueOf(product.getId()));
+                table.addCell(product.getLibelle());
+                table.addCell(String.valueOf(product.getPrixUnitaire()));
+                table.addCell(String.valueOf(product.getQuantite()));
+                table.addCell(product.getCategorie());
+            }
+
+            // Ajouter le tableau au document
+            document.add(table);
+
+            // Ajouter un pied de page avec un numéro de page (optionnel)
+            writer.setPageEvent(new PdfPageEventHelper() {
+                public void onEndPage(PdfWriter writer, Document document) {
+                    PdfContentByte cb = writer.getDirectContent();
+                    cb.beginText();
+                    BaseFont bf = null;
+                    try {
+                        bf = BaseFont.createFont(BaseFont.HELVETICA, BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                    cb.setFontAndSize(bf, 10);
+                    cb.showTextAligned(PdfContentByte.ALIGN_CENTER, "Page " + document.getPageNumber(), (document.right() - document.left()) / 2 + document.leftMargin(), document.bottom() - 20, 0);
+                    cb.endText();
+                }
+            });
+
+            document.close();
+            Utilis.alert("Le fichier PDF a été généré avec succès.");
+        } catch (DocumentException | FileNotFoundException e) {
+            e.printStackTrace();
+        } finally {
+            if (document.isOpen()) {
+                document.close();
+            }
+        }
     }
 }

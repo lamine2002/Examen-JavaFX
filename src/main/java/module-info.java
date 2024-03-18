@@ -10,6 +10,7 @@ module com.example.examen {
 //    requires org.kordamp.ikonli.javafx;
     // add icon pack modules
     requires org.kordamp.ikonli.fontawesome;
+    requires itextpdf;
 
 
     opens com.example.examen to javafx.fxml;
