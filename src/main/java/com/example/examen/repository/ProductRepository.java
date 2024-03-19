@@ -100,4 +100,27 @@ try {
         }
         return produits;
     }
+
+    public ObservableList<Product> search(String libelle) {
+        ObservableList<Product> produits = null;
+        try {
+            produits = FXCollections.observableArrayList();
+            String query = "SELECT * FROM produits WHERE libelle LIKE ?";
+            PreparedStatement preparedStatement = conn.prepareStatement(query);
+            preparedStatement.setString(1, "%" + libelle + "%");
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                Product product = new Product();
+                product.setId(resultSet.getInt("id"));
+                product.setLibelle(resultSet.getString("libelle"));
+                product.setQuantite(resultSet.getInt("quantite"));
+                product.setPrixUnitaire(resultSet.getDouble("prixUnitaire"));
+                product.setCategorie(categoryRepository.getLibelleById(resultSet.getInt("idcategorie")));
+                produits.add(product);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return produits;
+    }
 }

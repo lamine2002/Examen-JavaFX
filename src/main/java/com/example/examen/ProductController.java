@@ -16,6 +16,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 
 import java.io.FileNotFoundException;
@@ -64,6 +65,9 @@ public class ProductController implements Initializable {
 
     @FXML
     private TextField prixInput;
+
+    @FXML
+    private TextField searchField;
 
     @FXML
     private TableView<Product> productTable;
@@ -164,6 +168,18 @@ public class ProductController implements Initializable {
 
     public void displayProducts() {
         ObservableList<Product> products = productRepository.getAll();
+        colId.setCellValueFactory(new PropertyValueFactory<>("id"));
+        colLibelle.setCellValueFactory(new PropertyValueFactory<>("libelle"));
+        colPrix.setCellValueFactory(new PropertyValueFactory<>("prixUnitaire"));
+        colQuantite.setCellValueFactory(new PropertyValueFactory<>("quantite"));
+        colCategorie.setCellValueFactory(new PropertyValueFactory<>("categorie"));
+        productTable.setItems(products);
+    }
+
+    @FXML
+    void onSearch(KeyEvent event) {
+        String keyword = searchField.getText();
+        ObservableList<Product> products = productRepository.search(keyword);
         colId.setCellValueFactory(new PropertyValueFactory<>("id"));
         colLibelle.setCellValueFactory(new PropertyValueFactory<>("libelle"));
         colPrix.setCellValueFactory(new PropertyValueFactory<>("prixUnitaire"));
