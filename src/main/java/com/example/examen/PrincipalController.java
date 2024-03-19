@@ -1,6 +1,8 @@
 package com.example.examen;
 
+import com.example.examen.lib.Product;
 import com.example.examen.lib.Utilis;
+import com.example.examen.repository.ProductRepository;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -16,6 +18,7 @@ import javafx.stage.StageStyle;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class PrincipalController implements Initializable {
@@ -51,9 +54,22 @@ public class PrincipalController implements Initializable {
             Parent fxml = FXMLLoader.load(getClass().getResource("home.fxml"));
             paneContainer.getChildren().removeAll();
             paneContainer.getChildren().setAll(fxml);
+            // alerte dés que l’utilisateur se connecte
+            //une liste des produits donc la quantité est inférieur à 5.
+            ProductRepository productRepository = new ProductRepository();
+            List<Product> products = productRepository.getAll();
+            boolean alert = false;
+            for (Product product : products) {
+                if (product.getQuantite() < 5 && !alert) {
+                    Utilis.alert("Le produit " + product.getLibelle() + " est en rupture de stock");
+                }
+            }
+            alert = true;
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+
     }
 
     @FXML

@@ -156,8 +156,9 @@ public class ProductController implements Initializable {
         // ajouter les libelles dans le combo
         categoryCombo.setItems(libelles);
         productRepository = new ProductRepository();
-        categoryRepository = new CategoryRepository();
         displayProducts();
+
+
 
     }
 
