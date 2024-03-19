@@ -6,19 +6,19 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane prefHeight="810.0" prefWidth="841.0" stylesheets="@../../../styles/styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.examen.CategoryController">
    <children>
       <TextField fx:id="libelleInput" layoutX="263.0" layoutY="145.0" prefHeight="41.0" prefWidth="315.0" promptText="Libelle" />
       <Button fx:id="btnAddCategorie" layoutX="225.0" layoutY="230.0" mnemonicParsing="false" onAction="#addCategorie" prefHeight="12.0" prefWidth="110.0" text="Ajouter" />
       <Button fx:id="btnEditCategorie" layoutX="361.0" layoutY="230.0" mnemonicParsing="false" onAction="#updateCategorie" prefHeight="12.0" prefWidth="110.0" text="Modifier" />
       <Button fx:id="btnClearCategorie" layoutX="507.0" layoutY="230.0" mnemonicParsing="false" onAction="#clear" prefHeight="12.0" prefWidth="110.0" text="Clear" />
-      <TableView fx:id="categoryTable" layoutX="137.0" layoutY="376.0" onMouseClicked="#editCategorie" prefHeight="224.0" prefWidth="567.0">
+      <TableView fx:id="categoryTable" layoutX="137.0" layoutY="409.0" onMouseClicked="#editCategorie" prefHeight="224.0" prefWidth="567.0">
         <columns>
           <TableColumn fx:id="colId" prefWidth="144.66668319702148" text="Numero" />
           <TableColumn fx:id="colLibelle" prefWidth="376.6666717529297" text="Libelle" />
         </columns>
       </TableView>
-      <Button fx:id="btnDeleteCategorie" layoutX="359.0" layoutY="624.0" mnemonicParsing="false" onAction="#deleteCategorie" prefHeight="40.0" prefWidth="131.0" text="Supprimer" />
+      <Button fx:id="btnDeleteCategorie" layoutX="359.0" layoutY="657.0" mnemonicParsing="false" onAction="#deleteCategorie" prefHeight="40.0" prefWidth="131.0" text="Supprimer" />
+      <Button fx:id="btnProductInCategory" layoutX="507.0" layoutY="362.0" mnemonicParsing="false" onAction="#excelNumberOfProductPerCategory" text="Nombre de produits par categorie" />
    </children>
 </AnchorPane>

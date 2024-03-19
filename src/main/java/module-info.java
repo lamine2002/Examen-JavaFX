@@ -11,6 +11,8 @@ module com.example.examen {
     // add icon pack modules
     requires org.kordamp.ikonli.fontawesome;
     requires itextpdf;
+    requires org.apache.poi.poi;
+    requires org.apache.poi.ooxml;
 
 
     opens com.example.examen to javafx.fxml;

@@ -1,16 +1,21 @@
 package com.example.examen;
 
 import com.example.examen.lib.Category;
+import com.example.examen.lib.Product;
 import com.example.examen.lib.Utilis;
 import com.example.examen.repository.CategoryRepository;
+import com.example.examen.repository.ProductRepository;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import org.w3c.dom.events.MouseEvent;
-
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -37,6 +42,9 @@ public class CategoryController implements Initializable {
 
     @FXML
     private Button btnDeleteCategorie;
+
+    @FXML
+    private Button btnProductInCategory;
 
     @FXML
     private TextField libelleInput;
@@ -102,6 +110,37 @@ public class CategoryController implements Initializable {
         if (event.getClickCount() == 2) {
             Category category = categoryTable.getSelectionModel().getSelectedItem();
             libelleInput.setText(category.getLibelle());
+        }
+    }
+
+    @FXML
+    void excelNumberOfProductPerCategory(ActionEvent event) {
+        ProductRepository productRepository = new ProductRepository();
+        ObservableList<Product> products = productRepository.getNombreProduitParCategorie();
+
+        // Créer un nouveau classeur Excel
+        XSSFWorkbook workbook = new XSSFWorkbook();
+        XSSFSheet sheet = workbook.createSheet("Nombre de produits par catégorie");
+
+        // Créer l'en-tête de la feuille Excel
+        Row header = sheet.createRow(0);
+        header.createCell(0).setCellValue("Catégorie");
+        header.createCell(1).setCellValue("Nombre de produits");
+
+        // Écrire les données dans la feuille Excel
+        int rowNum = 1;
+        for (Product product : products) {
+            Row row = sheet.createRow(rowNum++);
+            row.createCell(0).setCellValue(product.getCategorie());
+            row.createCell(1).setCellValue(product.getQuantite());
+        }
+
+        // Écrire le classeur dans un fichier
+        try (FileOutputStream outputStream = new FileOutputStream("src/main/resources/files/NombreDeProduitsParCategorie.xlsx")) {
+            workbook.write(outputStream);
+            Utilis.alert("Le fichier Excel a été sauvegardé avec succès dans le répertoire resources/files.");
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }
