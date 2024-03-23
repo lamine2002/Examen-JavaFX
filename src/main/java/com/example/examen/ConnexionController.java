@@ -77,5 +77,10 @@ public class ConnexionController implements Initializable {
 
     }
 
+    @FXML
+    void toRegister(ActionEvent event) throws IOException {
+        Utilis.loadScene(event, "register.fxml", "Inscription");
+    }
+
 
 }

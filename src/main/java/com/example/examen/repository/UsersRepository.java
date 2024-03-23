@@ -83,4 +83,18 @@ public class UsersRepository {
         }
         return users;
     }
+
+    public boolean checkUser(String login, String password) {
+        try {
+            String query = "SELECT * FROM utilisateurs WHERE login = ? AND password = ?";
+            PreparedStatement preparedStatement = conn.prepareStatement(query);
+            preparedStatement.setString(1, login);
+            preparedStatement.setString(2, password);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            return resultSet.next();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
 }

@@ -6,24 +6,18 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
 <AnchorPane prefHeight="618.0" prefWidth="1232.0" stylesheets="@../../../styles/styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.examen.ConnexionController">
    <children>
       <AnchorPane layoutX="184.0" prefHeight="618.0" prefWidth="635.0" style="-fx-background-color: #353A56;">
          <children>
-            <ImageView fitHeight="286.0" fitWidth="328.0" layoutX="175.0" layoutY="71.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="286.0" fitWidth="328.0" layoutX="175.0" layoutY="110.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../images/logo3-removebg-preview.png" />
                </image>
             </ImageView>
-            <Text fx:id="welcomeText" fill="#fbfafa" layoutX="109.0" layoutY="376.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bienvenue sur notre plateforme de gestion. " wrappingWidth="417.99995930989576" />
-            <Text fx:id="welcomeText1" fill="#fbfafa" layoutX="157.0" layoutY="405.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Connectez-vous pour accéder à vos outils de travail et simplifier vos tâches quotidiennes" textAlignment="CENTER" wrappingWidth="321.33333333333326">
-               <font>
-                  <Font name="System Bold" size="16.0" />
-               </font>
-            </Text>
+            <Text fx:id="welcomeText" fill="#fbfafa" layoutX="109.0" layoutY="406.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Page de Connexion" textAlignment="CENTER" wrappingWidth="417.99995930989576" />
          </children></AnchorPane>
       <AnchorPane layoutX="826.0" prefHeight="618.0" prefWidth="409.0">
          <children>
@@ -34,6 +28,6 @@
          </children>
       </AnchorPane>
       <Button fx:id="btnSignIn" layoutY="127.0" mnemonicParsing="false" prefHeight="67.0" prefWidth="191.0" text="Se Connecter" />
-      <Button fx:id="btnSignUp" layoutY="194.0" mnemonicParsing="false" prefHeight="67.0" prefWidth="191.0" text="S'Inscrire" />
+      <Button fx:id="btnSignUp" layoutY="194.0" mnemonicParsing="false" onAction="#toRegister" prefHeight="67.0" prefWidth="191.0" text="S'Inscrire" />
    </children>
 </AnchorPane>
