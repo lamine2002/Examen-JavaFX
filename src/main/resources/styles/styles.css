@@ -422,3 +422,44 @@ ComboBox .content .label:pressed {
 #btnProductInCategory .label:pressed, #btnUserInCategory .label:pressed {
     -fx-text-fill: white;
 }
+
+#btnSignIn, #btnSignUp{
+/*  fond transparent  */
+    -fx-background-color: transparent;
+    -fx-text-fill: #353A56;
+    -fx-font-size: 16px;
+    -fx-font-family: "Arial";
+    -fx-font-weight: bold;
+    -fx-padding: 10px 20px;
+    -fx-border-radius: 30px;
+}
+
+#btnSignIn:hover, #btnSignUp:hover{
+/*  fond transparent  */
+    -fx-background-color: transparent;
+    -fx-text-fill: #4b5279;
+}
+
+#btnSignIn:pressed, #btnSignUp:pressed{
+/*  fond transparent  */
+    -fx-background-color: transparent;
+    -fx-text-fill: #4b5279;
+}
+
+#btnSignIn .label, #btnSignUp .label{
+/*  fond transparent  */
+    -fx-text-fill: #353A56;
+    -fx-font-size: 16px;
+    -fx-font-family: "Arial";
+    -fx-font-weight: bold;
+}
+
+#welcomeText{
+    -fx-text-fill: #353A56;
+    -fx-font-size: 20px;
+    -fx-font-family: "Arial";
+    -fx-font-weight: bold;
+/*  centrer le texte   */
+
+
+}

@@ -28,6 +28,12 @@ public class ConnexionController implements Initializable {
     private Button btnLogin;
 
     @FXML
+    private Button btnSignIn;
+
+    @FXML
+    private Button btnSignUp;
+
+    @FXML
     private TextField loginInput;
 
     @FXML
@@ -35,6 +41,8 @@ public class ConnexionController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         conn = bd.getConnection();
+        // mettre le button btnSignIn avec un fond #4b5279 et un texte blanc
+
     }
     @FXML
     void login(ActionEvent event) throws IOException {
